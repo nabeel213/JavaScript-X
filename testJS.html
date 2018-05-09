@@ -1,0 +1,36 @@
+
+<HTML>
+
+
+<form name = "form1">
+<input type = "button">
+Number1; <input type ="text" name = "T1"><Br>
+Number2; <input type = "text" name = "T2"><Br>
+<input type = "button"  value="+" onclick = "addFunction()" name = "B">
+Result: <input type="text" name="TB">
+</form>
+
+<script>
+function addFunction(){
+
+//var j = 0;
+
+
+	for(var j=0; j < window.document.forms.length; j++){
+	
+		for(var i = 0; i<window.document.forms[j].elements.length; i++){
+		
+			if(window.document.forms[j].elements[i].type== "text" && window.document.forms[j].elements[i].value == ""){
+			
+				window.alert("Chad you forgot this field man");
+				window.document.forms[j].elements[i].focus();
+				
+			break;	
+			}
+	
+		}
+	}
+}
+
+</script>
+</HTML>

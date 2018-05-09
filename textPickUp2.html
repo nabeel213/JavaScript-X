@@ -1,0 +1,34 @@
+
+<HTML>
+<script>
+	var fsize=10;
+	function move(){
+	
+		document.getElementById("text").style.top=window.event.clientY+20;
+		document.getElementById("text").style.left=window.event.clientX+20;
+	}
+	
+	function pickUpText(){
+	if (input1.value !=""){
+		text.innerHTML = input1.value;
+		}
+	}
+	function changesize(){
+	
+		if(window.event.ctrlKey){
+			fsize++;
+			document.getElementById("text").style.fontSize=fsize;
+		}
+	}
+</script>
+
+<Body onmousemove = "move()" onkeydown="changesize()">
+	
+	<span id = "text" name="text" style="position:absolute; top 100; left:300">
+	QAQ
+	</span>
+	
+	<input id="input1" name="inputName" type="text" onmouseleave=pickUpText()>
+	
+</Body>
+</HTML>

@@ -1,0 +1,59 @@
+
+<HTML>
+<script>
+	function sizeFunction(){
+	
+		//document.getElementById("QAQ").style.fontSize=window.event.clientY/4;
+		
+		document.getElementById("QAQ").style.top=window.event.clientY;
+		document.getElementById("QAQ").style.left=window.event.clientX;
+	}
+	
+	function colourFunction(colour) {
+		document.getElementById("QAQ").style.color = colour;
+	}
+	function pickUpText(){
+	
+		window.document.getElementById("QAQ").innerHTML = window.document.getElementById("textInputSpan").value;
+	}
+
+</script>
+
+<Body onmousemove = "sizeFunction()">
+
+	<Span id ="QAQ" style="position:absolute; font-size:100">
+		QA
+	</span>
+	
+	<span id = "redBox" style="position:absolute; top:100; left:100; background-color: Red; font-size:50" onmouseenter="colourFunction('red');" onmouseleave="changeColour('Black');" >
+
+	redBox
+
+	</Span>
+	
+	<span id = "GreenBox" style="position:absolute; top:100; left:1200; background-color: Green; font-size:50" onmouseenter="colourFunction('green');" onmouseleave="changeColour('Black');">
+
+	GreenBox
+
+	</Span>
+	
+	<span id = "BlueBox" style="position:absolute; top:800; left:100; background-color: Blue; font-size:50" onmouseenter="colourFunction('Blue');">
+
+	BlueBox
+
+	</Span>
+	
+	<span id = "YellowBox" style="position:absolute; top:800; left:1200; background-color: Yellow; font-size:50" onmousewheel="colourFunction('Yellow');" >
+
+	YellowBox
+
+	</Span>
+	
+	<span id = "textInputSpan" style="position:absolute; top 100; left:300" onmouseenter="pickUpText();">
+	
+		
+	</span>
+	
+</Body>
+
+</HTML>

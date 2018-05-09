@@ -1,0 +1,38 @@
+
+<HTML>
+<script>
+	
+	function xyz(){
+		
+		document.getElementById("QA").style.top=window.event.clientY;
+		document.getElementById("QA").style.left=window.event.clientX;
+		
+		
+	}
+	
+	function sizeFunction(){
+	
+		document.getElementById("QAQ").style.size=window.event.clientY;
+	
+	}
+
+</script>
+
+<Body onmousemove = "sizeFunction()">
+
+	<Span id ="QAQ" style="size:absolute">
+
+		QAQ 
+
+	</span>
+</Body>
+
+<Body onmousemove = "xyz()">
+
+	<Span id ="QA" style="position:absolute">
+
+		QA Movement
+
+	</span>
+</Body>
+</HTML>
