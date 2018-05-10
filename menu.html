@@ -1,35 +1,72 @@
 <HTML>
 <script>
-    function showMenu() {
+    function showMenu(input) {
 
-        window.document.getElementById("firstMenuSpan").style.visibility="visible";
+        if(input.id=="countryMenu" | input.id=="firstMenuSpan") {
 
+            window.document.getElementById("firstMenuSpan").style.visibility = "visible";
+        }
+
+        else{
+
+            window.document.getElementById("secondMenuSpan").style.visibility = "visible";
+        }
+    }
+    function hideMenu(input) {
+
+        if(input.id=="countryMenu" | input.id=="firstMenuSpan") {
+            window.document.getElementById("firstMenuSpan").style.visibility = "hidden";
+        }
+
+       else{
+
+           window.document.getElementById("secondMenuSpan").style.visibility = "hidden";
+       }
 
     }
+    function changeColour(spanID){
 
-    function hideMenu() {
-        window.document.getElementById("firstMenuSpan").style.visibility="hidden";
+       spanID.style.color="Blue";
+
+       // spanID.style.backgroundColor="Blue"; // in case you want to change the background as well
+
     }
-    function changeColour(){
+    function changeColourBack(spanID){
 
-    window.document.getElementById()
-
+        spanID.style.color="Black";
     }
 
 </script>
-<span>
 
+<font size="8">
+<span id="countryMenu" style="background-color: Yellow" onmouseenter="showMenu(this)" onmouseleave="hideMenu(this)">Countries</span><Br>
+</font>
 
-<span id="countryMenu" style="background-color: Yellow" onmouseenter="showMenu()" onmouseenter="changeColour()"; onmouseleave="hideMenu()";">Countries</span><Br>
+<span id="firstMenuSpan" style="visibility: hidden" onmouseenter="showMenu(this)" onmouseleave="hideMenu(this)";>
 
-
-<span id="firstMenuSpan" name="firstMenuName" style="visibility: hidden" onmouseenter="showMenu()"; onmousehover="hoverMouse()" style="position:absolute; top:100; left:300">
-
-<span id="ukid" style="background-color: Yellow"  ;> UK</span><Br>
-    <span id="usaid" style="background-color: Yellow"  ;> USA</span><Br>
-    <span id="indiaid" style="background-color: Yellow"  ;> India</span><Br>
-    <span id="SAid" style="background-color: Yellow"  ;> South Africa </span><Br>
+    <font size="6">
+<span id="ukid" style="background-color: Yellow" onmouseenter="changeColour(this)" ; onmouseleave="changeColourBack(this)" onclick="window.location.href='https://en.wikipedia.org/wiki/United_Kingdom' " ;> United Kingdom</span><Br>
+    <span id="usaid" style="background-color: Yellow" onmouseenter="changeColour(this)" ; onmouseleave="changeColourBack(this)" onclick="window.location.href='https://en.wikipedia.org/wiki/United_States' " ;> America</span><Br>
+    <span id="indiaid" style="background-color: Yellow" onmouseenter="changeColour(this)" ; onmouseleave="changeColourBack(this)" onclick="window.location.href='https://en.wikipedia.org/wiki/India' " ;> India</span><Br>
+    <span id="SAid" style="background-color: Yellow" onmouseenter="changeColour(this)" ; onmouseleave="changeColourBack(this)" onclick="window.location.href='https://en.wikipedia.org/wiki/South_Africa' " ;> South Africa </span><Br>
     </span>
+    </font>
+
+<Br><Br>
+
+<font size="8">
+    <span id="sportsMenu" style="background-color: Yellow" onmouseenter="showMenu(this)" onmouseleave="hideMenu(this)">Sports</span><Br>
+</font>
+
+<span id="secondMenuSpan" style="visibility: hidden" onmouseenter="showMenu(this)" onmouseleave="hideMenu(this)";>
+
+    <font size="6">
+<span id="cricketId" style="background-color: Yellow" onmouseenter="changeColour(this)" ; onmouseleave="changeColourBack(this)" onclick="window.location.href='https://en.wikipedia.org/wiki/Cricket' " ;> Cricket</span><Br>
+    <span id="footballId" style="background-color: Yellow" onmouseenter="changeColour(this)" ; onmouseleave="changeColourBack(this)" onclick="window.location.href='http://www.goal.com/en-gb' " ;> Football</span><Br>
+    <span id="tableTennisId" style="background-color: Yellow" onmouseenter="changeColour(this)" ; onmouseleave="changeColourBack(this)" onclick="window.location.href='https://en.wikipedia.org/wiki/Table_tennis' " ;> Table Tennis</span><Br>
+    <span id="hockeyId" style="background-color: Yellow" onmouseenter="changeColour(this)" ; onmouseleave="changeColourBack(this)" onclick="window.location.href='https://en.wikipedia.org/wiki/Hockey' " ;> Hockey </span><Br>
+    </span>
+</font>
 
 
 </Body>

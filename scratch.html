@@ -1,44 +1,47 @@
 <HTML>
 
-
 <script>
-    function checkForm(form){
-        var ret = true;
+    function checkForm(inputForm){
 
-        for (var i=0;i<form.elements.length;i++){
-            input = form.elements[i];
-            if (input.type=="submit") continue;
-            if(input.value){
-                console.log("pos111111");
-                window.document.getElementById("nameLabel").style.visibility="hidden";
-                window.document.getElementById("passLabel").style.visibility="hidden";
+        var name = document.forms["form1"]["nameInput"].value;
+        var pass = document.forms["form1"]["passInput"].value;
+
+            if(name !="") {
+
+                console.log("++Top++");
+                window.document.getElementById("nameLabel").style.visibility = "hidden";
             }
-            else  {
-                console.log("neg")
-                //window.alert(input.elements[i].name + " was not entered");
+
+            if (pass !="") {
+
+                console.log("--bottom--")
+
+                window.document.getElementById("passLabel").style.visibility = "hidden";
+
+            }
+            if(name ==""){
+
                 window.document.getElementById("nameLabel").style.visibility = "visible";
-                window.document.getElementById("passLabel").style.visibility = "visible";
-                ret = false;
             }
-        }
-        return ret;
+            if(pass==""){
+
+                window.document.getElementById("passLabel").style.visibility = "visible";
+
+            }
     }
 
 </script>
-
-
 <Body>
 
-<Form action="C:\Users\Admin\Desktop\test.html" onsubmit="return checkForm(this)">
+<Form id="form1" action="C:\Users\Admin\Desktop\test.html" onsubmit="return checkForm(this)">
 
-    Name: <input type="text" name="N" id="N" >      <span id ="nameLabel" style="color: Red; visibility: hidden;"> ** </span>       <Br><Br>
+    Name: <input id="nameInput" type="text" name="N" id="N" >      <span id ="nameLabel" style="color: Red; visibility: hidden;"> ** </span> <Br><Br>
 
-    Password: <input type="password" name="P" id="P" >      <span id="passLabel" style="color: Red; visibility: hidden;"> ** </span>         <Br><Br>
+    Password: <input id="passInput" type="password" name="P" id="P" >      <span id="passLabel" style="color: Red; visibility: hidden;"> ** </span> <Br><Br>
+
     <input type="submit">
 
 </Form>
 
-
 </Body>
-
 </HTML>
