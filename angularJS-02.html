@@ -1,0 +1,34 @@
+<HTML ng-app="xyz">
+<script src="angular.js"></script>
+
+<script>
+
+    var M2 = angular.module("xyz", []);
+
+
+    var F = function F($scope){
+
+        $scope.regnum = "s1";
+        $scope.name = "Chad";
+        $scope.add = "some address"
+        $scope.msg = function(){
+
+            return "a fucking message";
+        }
+
+    }
+
+    M2.controller("ctrl2", F);
+
+</script>
+
+<div ng-controller="ctrl2">
+
+    Reg number = {{ regnum }}
+    Name = {{ name }}
+    Address = {{ add }}
+
+   {{ msg() }}
+
+</div>
+</HTML>

@@ -1,7 +1,7 @@
 <HTML>
 
 <script>
-    function checkForm(inputForm){
+    function checkForm(){
 
         var name = document.forms["form1"]["nameInput"].value;
         var pass = document.forms["form1"]["passInput"].value;
@@ -10,6 +10,7 @@
 
                 console.log("++Top++");
                 window.document.getElementById("nameLabel").style.visibility = "hidden";
+
             }
 
             if (pass !="") {
@@ -17,6 +18,7 @@
                 console.log("--bottom--")
 
                 window.document.getElementById("passLabel").style.visibility = "hidden";
+
 
             }
             if(name ==""){
@@ -33,11 +35,11 @@
 </script>
 <Body>
 
-<Form id="form1" action="C:\Users\Admin\Desktop\test.html" onsubmit="return checkForm(this)">
+<Form id="form1" action="C:\Users\Admin\Desktop\test.html" onsubmit="return checkForm()">
 
-    Name: <input id="nameInput" type="text" name="N" id="N" >      <span id ="nameLabel" style="color: Red; visibility: hidden;"> ** </span> <Br><Br>
+    Name: <input id="nameInput" type="text" name="N" id="N" >   <span id ="nameLabel" style="color: Red; visibility: hidden;"> ** </span> <Br><Br>
 
-    Password: <input id="passInput" type="password" name="P" id="P" >      <span id="passLabel" style="color: Red; visibility: hidden;"> ** </span> <Br><Br>
+    Password: <input id="passInput" type="password" name="P" id="P" >   <span id="passLabel" style="color: Red; visibility: hidden;"> ** </span> <Br><Br>
 
     <input type="submit">
 

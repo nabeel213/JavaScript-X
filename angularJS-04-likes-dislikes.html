@@ -1,0 +1,72 @@
+<HTML ng-app="xyz">
+<script src="angular.js"></script>
+
+<script>
+
+    var M2 = angular.module("xyz", []);
+
+
+    var dataInFunction = function F($scope){
+
+        $scope.Data = [
+
+            {subject: "Java", likes: 0, dislikes: 0},
+            {subject: "VB", likes: 0 , dislikes: 0},
+            {subject: "HTML", likes: 0, dislikes:0},
+        ];
+        $scope.likeFunction = function(D){
+
+           D.likes++;
+        }
+        $scope.dislikeFunction = function(D){
+
+            D.dislikes++;
+        }
+        $scope.compareFunction = function(D){
+
+            if(D.likes > D.dislikes ){
+
+                return "More Likes";
+            }
+            else if(D.likes < D.dislikes){
+
+                return "More dislikes";
+            }
+            else if(D.likes == D.dislikes){
+
+                return "Same";
+            }
+        }
+    }
+
+    M2.controller("ctrl2", dataInFunction);
+
+</script>
+
+<div ng-controller="ctrl2">
+
+    <table>
+        <tr>
+            <td> Subject </td>
+            <td> Likes </td>
+            <td> Dislikes </td>
+            <td> Result </td>
+            <td> Options</td>
+        </tr>
+
+        <tr ng-repeat="D in Data">
+            <td> {{ D.subject }} </td>
+            <td> {{ D.likes }} </td>
+            <td> {{ D.dislikes }} </td>
+            <td> {{ compareFunction(D) }} </td>
+            <td> <input type="Button" value="Like" ng-click="likeFunction(D)">  <input type="Button" value="Dislike" ng-click="dislikeFunction(D)">       </td>
+
+        </tr>
+</div>
+</HTML>
+
+
+<!--<tr ng-repeat="rec in records1 |orderBy:'regnum':false">-->
+<!--<td> {{ rec.regnum }} </td>-->
+<!--<td> {{ rec.name }} </td>-->
+<!--</tr>-->

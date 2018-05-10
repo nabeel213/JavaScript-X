@@ -1,0 +1,29 @@
+<HTML ng-app="xyz">
+<script src="angular.js"></script>
+
+<script>
+
+    var M2 = angular.module("xyz", []);
+
+
+    var F = function F($scope){
+
+        $scope.name = "Chad";
+
+        }
+
+    M2.controller("ctrl2", F);
+
+</script>
+
+<div ng-controller="ctrl2">
+
+  {{ name }}
+
+    <Br>
+    <Br>
+
+    <input type ='Text' ng-model="name">
+
+</div>
+</HTML>

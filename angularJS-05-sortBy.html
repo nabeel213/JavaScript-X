@@ -1,0 +1,55 @@
+<HTML ng-app="xyz">
+<script src="angular.js"></script>
+
+<script>
+
+    var M2 = angular.module("xyz", []);
+    var dataInFunction = function F($scope){
+
+        $scope.Data =
+            [
+                {S.No:1, id: 75, product: "coke", price: 1.7},
+                {id: 92, product: "7up" , price: 1.92},
+                {id: 195, product: "fanta", price:1.92},
+            ];
+        $scope.field = 'product';
+        $scope.order = 'true';
+
+        $scope.numberFunction = function(){
+
+        }
+    }
+
+    M2.controller("ctrl2", dataInFunction);
+
+</script>
+
+<div ng-controller="ctrl2">
+
+    <table>
+        <tr>
+            <td> S.No </td>
+            <td> ID </td>
+            <td> Product </td>
+            <td> Quantity </td>
+            <td> Price</td>
+        </tr>
+
+        <tr ng-repeat="D in Data |'field':order">
+
+            <td> dfd {{ numberFunction() d }} </td>
+            <td> {{ D.likes }} </td>
+            <td> {{ D.dislikes }} </td>
+            <td> {{ compareFunction(D) }} </td>
+
+            <!--<td> <input type="Button" value="Like" ng-click="likeFunction(D)">  <input type="Button" value="Dislike" ng-click="dislikeFunction(D)">  </td>-->
+
+        </tr>
+</div>
+</HTML>
+
+
+<!--<tr ng-repeat="rec in records1 |orderBy:'regnum':false">-->
+<!--<td> {{ rec.regnum }} </td>-->
+<!--<td> {{ rec.name }} </td>-->
+<!--</tr>-->

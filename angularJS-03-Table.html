@@ -1,0 +1,53 @@
+<HTML ng-app="xyz">
+<script src="angular.js"></script>
+
+<script>
+
+    var M2 = angular.module("xyz", []);
+
+
+    var dataInFunction = function F($scope){
+
+        $scope.records1 = [
+
+            {regnum: 21, name:"nabeel", marks: 75},
+            {regnum: 5221, name: "Chad", marks: 0},
+            {regnum: 100, name: "Snake", marks:84}
+
+        ];
+    }
+
+    M2.controller("ctrl2", dataInFunction);
+
+</script>
+
+<div ng-controller="ctrl2">
+
+    <table>
+        <tr>
+
+            <td> Regestration Number</td>
+            <td> Name </td>
+            <td> Marks </td>
+            <td> Percentage </td>
+            <td> Result </td>
+        </tr>
+
+        <tr ng-repeat="rec in records1 |orderBy:'marks':true">
+            <td> {{ rec.regnum }} </td>
+            <td> {{ rec.name }} </td>
+            <td> {{ rec.marks }} </td>
+            <td> {{ rec.marks * 100/150  + " %"}} </td>
+
+            <td ng-if="rec.marks>=60"> Pass </td>
+            <td ng-if="rec.marks<60"> Fail </td>
+        </tr>
+
+</div>
+</HTML>
+
+
+<!--<tr ng-repeat="rec in records1 |orderBy:'regnum':false">-->
+    <!--<td> {{ rec.regnum }} </td>-->
+    <!--<td> {{ rec.name }} </td>-->
+<!--</tr>-->
